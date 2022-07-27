@@ -5,8 +5,16 @@ class CategoryMealPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final routeArgs = ModalRoute.of(context)?.settings.arguments
+        as Map<String, String>; // take arguments from navigatorPushName
+
+    final categoryTitle = routeArgs['title'];
+    final categoryId = routeArgs['id'];
     return Scaffold(
-      appBar: AppBar(title: const Text('Meals Recipes Example')),
+      appBar: AppBar(
+        title: Text(categoryTitle!),
+        backgroundColor: Colors.teal[400],
+      ),
       body: const Center(
         child: Text('Category meal'),
       ),
