@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import './category_item.dart';
-import './models/category.dart';
 import './dummy_data.dart';
 
 class CategoriesPage extends StatelessWidget {
@@ -9,9 +8,13 @@ class CategoriesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(10.0),
-      child: GridView(
+    return Scaffold(
+      backgroundColor: const Color(0xffECEFF4),
+      appBar: AppBar(
+        title: const Text('Recipes App'),
+      ),
+      body: GridView(
+        padding: const EdgeInsets.all(16),
         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 200,
           childAspectRatio: 3 / 2,
