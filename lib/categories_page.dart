@@ -23,7 +23,7 @@ class CategoriesPage extends StatelessWidget {
           mainAxisSpacing: 20,
         ),
         children: [
-          ...recipesCategory.map((e) {
+          ...DUMMY_CATEGORIES.map((e) {
             return CategoryItem(e.id, e.color, e.title);
           }).toList(),
         ],
