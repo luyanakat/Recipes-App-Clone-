@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/meal.dart';
 
 class MealItem extends StatelessWidget {
+  final String id;
   final String title;
   final String imgUrl;
   final int duration;
@@ -9,6 +10,7 @@ class MealItem extends StatelessWidget {
   final Affordability affordability;
 
   const MealItem(
+    this.id,
     this.title,
     this.imgUrl,
     this.duration,
@@ -39,12 +41,14 @@ class MealItem extends StatelessWidget {
     }
   }
 
-  void selectMeal() {}
+  void selectMeal(BuildContext context) {
+    Navigator.of(context).pushNamed('/meals-detail', arguments: {id});
+  }
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: selectMeal,
+      onTap: () => selectMeal(context),
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
@@ -69,7 +73,8 @@ class MealItem extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  padding: const EdgeInsets.all(10),
+                  margin: const EdgeInsets.only(bottom: 5),
+                  padding: const EdgeInsets.all(6),
                   decoration: BoxDecoration(
                     color: Colors.black54,
                     borderRadius: BorderRadius.circular(16),
@@ -88,7 +93,7 @@ class MealItem extends StatelessWidget {
             ),
             Container(
               padding: const EdgeInsets.all(12),
-              decoration: const BoxDecoration(color: Colors.white),
+              decoration: BoxDecoration(color: Colors.yellow[50]),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
