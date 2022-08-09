@@ -9,9 +9,7 @@ class MealDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final mealId = ModalRoute.of(context)?.settings.arguments as String;
 
-    final selectedMeal = DUMMY_MEALS.firstWhere((meal) {
-      return meal.id == mealId;
-    });
+    final selectedMeal = DUMMY_MEALS.firstWhere((meal) => meal.id == mealId);
 
     return Scaffold(
       appBar: AppBar(
