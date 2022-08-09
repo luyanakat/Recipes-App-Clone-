@@ -26,12 +26,13 @@ class CategoryMealPage extends StatelessWidget {
       body: ListView.builder(
         itemBuilder: (context, index) {
           return MealItem(
-              categoryMeals[index].id,
-              categoryMeals[index].title,
-              categoryMeals[index].imageUrl,
-              categoryMeals[index].duration,
-              categoryMeals[index].complexity,
-              categoryMeals[index].affordability);
+            categoryMeals[index].id,
+            categoryMeals[index].title,
+            categoryMeals[index].imageUrl,
+            categoryMeals[index].duration,
+            categoryMeals[index].complexity,
+            categoryMeals[index].affordability,
+          );
         },
         itemCount: categoryMeals.length,
       ),
